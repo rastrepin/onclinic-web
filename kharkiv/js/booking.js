@@ -36,6 +36,7 @@
       price: 'від 11 505 грн',
     },
     'kolporafia': {
+    surgeons: ['afanasiev', 'striukov'],
       searchName: 'Кольпорафія',
       officialName: 'Кольпорафія (опущення, випадіння матки)',
       price: '25 525 грн',
