@@ -682,6 +682,39 @@ h2.section-title, h2.sec-title, .section-title {
   </div>
 </div>
 
+<!-- CONTEXT BLOCK: ?case=kolporafia -->
+<div class="context-block" id="caseContextBlock" style="display:none">
+  <div class="context-inner">
+    <h2 id="ctxHeadline"></h2>
+    <p class="context-focus" id="ctxFocus"></p>
+    <div class="context-stat-badge" id="ctxStat"></div>
+    <br>
+    <a class="context-cta-link" id="ctxCta" href="/kharkiv/kolporafia#appointment">Детальніше про операцію →</a>
+  </div>
+</div>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var caseParam = params.get('case');
+  var cases = {
+    'kolporafia': {
+      headline: 'Кольпорафія — хірургічна корекція опущення і випадіння матки',
+      focus: 'Ігор Володимирович виконує реконструктивні операції при пролапсі тазових органів — передню, задню та поєднану кольпорафію. 34 роки клінічної практики у гінекологічній хірургії, включаючи широкий спектр реконструктивних втручань. Постійне оновлення сучасних протоколів через викладацьку діяльність на кафедрі ХНМУ.',
+      stat: '34 роки клінічного досвіду, к.м.н., вища категорія',
+      cta: '/kharkiv/kolporafia#appointment'
+    }
+  };
+  if(caseParam && cases[caseParam]){
+    var d = cases[caseParam];
+    document.getElementById('ctxHeadline').textContent = d.headline;
+    document.getElementById('ctxFocus').textContent = d.focus;
+    document.getElementById('ctxStat').textContent = d.stat;
+    document.getElementById('ctxCta').href = d.cta;
+    document.getElementById('caseContextBlock').style.display = '';
+  }
+})();
+</script>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -702,6 +735,10 @@ h2.section-title, h2.sec-title, .section-title {
         <div class="hero-stat">
           <div class="hero-stat-val">700 грн</div>
           <div class="hero-stat-lbl">консультація</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">50+</div>
+          <div class="hero-stat-lbl">операцій на базі ОН Клінік Харків</div>
         </div>
       </div>
       <div class="hero-tags">
@@ -799,7 +836,7 @@ h2.section-title, h2.sec-title, .section-title {
       <div class="career-item">
         <div class="career-year">2019</div>
         <div class="career-events">
-          <div class="career-event">Асистент кафедри акушерства і гінекології №2, ХДМУ</div>
+          <div class="career-event">Асистент кафедри акушерства і гінекології №2, ХНМУ</div>
         </div>
       </div>
       <div class="career-item">
@@ -909,10 +946,29 @@ h2.section-title, h2.sec-title, .section-title {
           </div>
         </div>
       </div>
+      <div class="spec-card">
+        <div class="spec-card-header">
+          <h3>Кольпорафія</h3>
+        </div>
+        <div class="spec-card-body">
+          <p class="spec-desc">Хірургічна корекція опущення і випадіння матки та стінок піхви через природний шлях, без розрізів на животі.</p>
+          <div class="spec-divider"></div>
+          <span class="spec-sub-label">Досвід лікаря</span>
+          <p class="spec-sub-text">34 роки клінічної практики у гінекологічній хірургії, включаючи реконструктивні операції при пролапсі тазових органів. Постійне оновлення сучасних протоколів через викладацьку діяльність на кафедрі ХНМУ.</p>
+          <div class="spec-divider"></div>
+          <span class="spec-sub-label">Офіційна назва послуги</span>
+          <p class="spec-official">Кольпорафія (опущення, випадіння матки) — 25 525 грн</p>
+          <div class="spec-price">Вартість: 25 525 грн</div>
+          <div class="spec-ctas">
+            <button class="spec-cta-primary" onclick="openBookingModal({prefilledDoctor:'afanasiev',prefilledCase:'kolporafia',sourceCTA:'doctor_page_specialization'})">Записатись на консультацію</button>
+            <a href="/kharkiv/kolporafia" class="spec-cta-ghost">Детальніше про операцію →</a>
+          </div>
+        </div>
+      </div>
     </div><!-- /spec-grid -->
     <div class="show-more-spec">
       <button class="show-more-spec-btn" onclick="expandSpecCards(this)">
-        Показати ще 2 операцій ↓
+        Показати ще 3 операцій ↓
       </button>
     </div>
   </div>
@@ -989,23 +1045,18 @@ h2.section-title, h2.sec-title, .section-title {
 
   <div class="eeat-row">
     <span class="eeat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></span>
-    <span class="eeat-label">Автор:</span>
+    <span class="eeat-label">Автор профілю:</span>
     <span class="eeat-value">Ігор Растрепін, засновник <a href="https://check-up.in.ua" target="_blank" rel="noopener" style="color:inherit">check-up.in.ua</a></span>
   </div>
   <div class="eeat-row">
-    <span class="eeat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></span>
-    <span class="eeat-label">Медичний редактор:</span>
-    <span class="eeat-value">Олена Буценко, маркетолог ОН Клінік Харків</span>
-  </div>
-  <div class="eeat-row">
     <span class="eeat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-    <span class="eeat-label">Оновлено:</span>
-    <span class="eeat-value">квітень 2026</span>
+    <span class="eeat-label">Профіль оновлено:</span>
+    <span class="eeat-value">травень 2026</span>
   </div>
   <div class="eeat-row">
     <span class="eeat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-    <span class="eeat-label">Джерела:</span>
-    <span class="eeat-value">Джерела даних про лікаря: офіційний сайт ОН Клінік Харків, інформація надана клінікою</span>
+    <span class="eeat-label">Джерело даних:</span>
+    <span class="eeat-value">офіційний сайт ОН Клінік Харків, інформація надана клінікою</span>
   </div>
 </div>
 
@@ -1014,11 +1065,15 @@ h2.section-title, h2.sec-title, .section-title {
   <h2>Гінеколог-хірург в Харкові — Афанасьєв І.В., ОН Клінік</h2>
   <p>
     Афанасьєв Ігор Володимирович — оперуючий гінеколог ОН Клінік
-    Харків. Кандидат медичних наук, лікар вищої кваліфікаційної
-    категорії, 34 роки клінічного досвіду. Спеціалізується на
-    лапароскопічній міомектомії (26 690 грн), лапароскопії при
-    ендометріозі та кістах яєчників (від 21 745 грн), гістероскопії
-    (від 11 505 грн). Обладнання Karl Storz (Німеччина).
+    Харків, кандидат медичних наук (2008), лікар вищої кваліфікаційної
+    категорії (2010), 34 роки клінічного досвіду. Спеціалізація з
+    ендоскопічної хірургії з 2006 року, асистент кафедри акушерства
+    і гінекології №2 ХНМУ (з 2019). Виконує: лапароскопічну
+    міомектомію (26 690 грн), лапароскопічну гістеректомію
+    (від 28 895 грн), лапароскопію при ендометріозі та кістах
+    яєчників (від 21 745 грн), гістероскопію (від 11 505 грн),
+    кольпорафію (25 525 грн). 50+ операцій на базі ОН Клінік Харків.
+    Обладнання Karl Storz (Німеччина).
     Приймає пацієнток з Харкова, Харківської, Сумської та
     Полтавської областей.
     ОН Клінік Харків Левада, вул. Молочна, 48, м. Левада.
